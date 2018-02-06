@@ -99,8 +99,6 @@ def make_input(stuff_table, cost_table,
     G = make_G(height, width)
     h = make_h(stuff_table, width)
 
-    # import ipdb
-    # ipdb.set_trace()
     if first_condition:
         G, h = add_first_condition(
             G, h, height, width, first_condition_constraint)
@@ -110,9 +108,14 @@ def make_input(stuff_table, cost_table,
     return c, G, h, A, b
 
 
-def solve(stuff_table, cost_table, first_condition=True, second_condition=True):
+def solve(stuff_table, cost_table,
+          first_condition=True, second_condition=True,
+          first_condition_constraint=4, second_condition_constraint=94):
     c, G, h, A, b = make_input(
-        stuff_table, cost_table, first_condition=first_condition, second_condition=second_condition)
+        stuff_table, cost_table,
+        first_condition=first_condition, second_condition=second_condition,
+        first_condition_constraint=first_condition_constraint,
+        second_condition_constraint=second_condition_constraint)
     c_mat, G_mat, h_mat, b_mat, A_mat = matrix(
         c), matrix(G), matrix(h), matrix(b), matrix(A)
 
