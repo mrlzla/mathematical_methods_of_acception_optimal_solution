@@ -109,13 +109,15 @@ def make_input(stuff_table, cost_table,
 
 
 def solve(stuff_table, cost_table,
-          first_condition=True, second_condition=True,
+          first_condition=False, second_condition=False,
           first_condition_constraint=4, second_condition_constraint=94):
     c, G, h, A, b = make_input(
         stuff_table, cost_table,
         first_condition=first_condition, second_condition=second_condition,
         first_condition_constraint=first_condition_constraint,
         second_condition_constraint=second_condition_constraint)
+    #import ipdb
+    # ipdb.set_trace()
     c_mat, G_mat, h_mat, b_mat, A_mat = matrix(
         c), matrix(G), matrix(h), matrix(b), matrix(A)
 

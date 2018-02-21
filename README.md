@@ -1,1 +1,1 @@
-# mathematical_methods_of_acception_optimal_solution
+# Mathematical methods of acception optimal solution
